@@ -6,6 +6,8 @@ int disp_menu(void);
 void enroll_num(void);
 void login_out(void);
 int is_enroll_num(int num);
+int is_vaild_accunt(int num,int pwd);//함수 추가함 1=유효,0=무효 
+
 
 int e_num[5];           	// 사번
 int e_pwd[5];          		// 비밀번호
@@ -155,45 +157,42 @@ void insertID(int id){
 }
 
 // 사번 등록 / 삭제
-void enroll_num(void)
+void enroll_num(void)//1:등록or 삭제 함수 
 {
 	int num,pwd;                          			// 사번, 비밀번호 
 	int index;                                  // 사번이 있는 배열의 위치
 	int buf=0;
 	int ch=0;
+
 	if (login_num != 0)                   // 이미 로그인 된 상태면 반환
 	{
 		printf("@ 로그아웃 후 사용할 수 있습니다!\n");
 		return;
 	}
-
-	printf("\n[ 사번 등록/삭제 ]\n\n");
-
-    // todo: 사번 등록 / 삭제 코드 작성
-    printf(">사번(1-9999) :");
-    scanf("%d", &num);
-	if(num == e_num) {
+	else {
+	
+		printf("\n[ 사번 등록/삭제 ]\n\n");
+	
+	    // todo: 사번 등록 / 삭제 코드 작성
+	    printf("> 사번(1-9999) :");
+	    scanf("%d", &num);
 		
-		deleteID(1);
-		
-		/*	
-		puts("이미 등록되었습니다!");
-		printf("삭제 하시겠습니까<Y/N>?");
-		scanf("%c",&ch);
-		if(ch == 'Y') {
+		if(is_enroll_num(num)) {//사번이 기 등록여부 확인 등록되있으면 1 없으면 0 
+				deleteID(1);
+			//삭제여부를 묻는 코드까지 들어있음 scanf yn코드 다있음. 
 			
 		}
 		else {
-			
+			printf("> 비밀번호(0-9999) :");
+		    scanf("%d", &pwd);
+		    printf("# %d번이 등록되었습니다!\n\n",num);
+		    printf(" 현재 등록된 사번(비밀번호)  :  %d (%d)", num  , pwd);
+		    insertToIDList(num,pwd);
+		    printf("e_cnt : %d",e_cnt);
 		}
-		*/
 	}
-    printf(">비밀번호(0-9999) :");
-    scanf("%d", &pwd);
-    printf("# %d번이 등록되었습니다!\n\n",num);
-    printf(" 현재 등록된 사번(비밀번호)  :  %d (%d)", num  , pwd);
-    insertToIDList(num,pwd);
 	return;
+	
 }
 
 // 로그인 / 로그아웃
@@ -215,8 +214,9 @@ void login_out(void)
 		scanf("%d",&num); 
 		printf("> 비밀번호 :");
 		scanf("%d",&pwd); 
-	
-		if( e_num == num || e_pwd == pwd ) {
+		
+		//is_vaild_accunt(num,pwd) 1=유효,0=무효
+		if( is_vaild_accunt(num,pwd) ) {//전체 사번에서 입력된 번호를 확인 
 			
 		//todo 로그인 플래그  
 			login_num = num;
@@ -232,14 +232,43 @@ void login_out(void)
 
 }
 
-// 등록된 번호인지 확인
+// 등록된 번호인지 확인 등록되있으면 1 없으면 0 
 int is_enroll_num(int num)
 {
 	int i;
-
+	
+	for(i=0;i<e_cnt;i++) {
+		if(num==e_num[i]) {
+			return 1;
+		}
+		else {
+			
+		} 
+		
+	}
 	// todo: 등록된 번호인지 확인 코드 작성
 
-	return -1;
+	return 0;
+}
+
+
+//int is_vaild_accunt(int num,int pwd);//함수 추가함 1=유효,0=무효
+int is_vaild_accunt(int num,int pwd)
+{
+	int i;
+	puts("\r\nis_vaild_accunt\r\n");
+	
+	for(i=0 ; i<(e_cnt+2) ; i++) {
+		if(e_num == num && e_pwd == pwd) {
+			return 1;
+		}
+		else {}
+		
+	puts("\r\nis_vaild_accunt run loop\r\n");
+	}
+	
+	
+	return 0;
 }
 
 // 회의실 예약 등록
