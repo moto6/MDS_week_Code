@@ -159,7 +159,8 @@ void enroll_num(void)
 {
 	int num,pwd;                          			// 사번, 비밀번호 
 	int index;                                  // 사번이 있는 배열의 위치
-
+	int buf=0;
+	int ch=0;
 	if (login_num != 0)                   // 이미 로그인 된 상태면 반환
 	{
 		printf("@ 로그아웃 후 사용할 수 있습니다!\n");
@@ -167,14 +168,31 @@ void enroll_num(void)
 	}
 
 	printf("\n[ 사번 등록/삭제 ]\n\n");
+
     // todo: 사번 등록 / 삭제 코드 작성
     printf(">사번(1-9999) :");
     scanf("%d", &num);
+	if(num == e_num) {
+		
+		deleteID(1);
+		
+		/*	
+		puts("이미 등록되었습니다!");
+		printf("삭제 하시겠습니까<Y/N>?");
+		scanf("%c",&ch);
+		if(ch == 'Y') {
+			
+		}
+		else {
+			
+		}
+		*/
+	}
     printf(">비밀번호(0-9999) :");
     scanf("%d", &pwd);
     printf("# %d번이 등록되었습니다!\n\n",num);
     printf(" 현재 등록된 사번(비밀번호)  :  %d (%d)", num  , pwd);
-    
+    insertToIDList(num,pwd);
 	return;
 }
 
@@ -184,26 +202,33 @@ void login_out(void)
 	int num, pwd;
 	int index;
 	
-	if() {//로그인상태?
-		puts("# 로그아웃 되었습니다");
+	if(login_num) {//로그인상태?
+		puts("# 로그아웃 되었습니다!");
+		login_num = 0;
 		return; 
 	}
-
-	// todo: 로그인, 로그아웃 코드 작성
-	puts("\n\r[ 로그인 ] \n\r");
-	printf("> 사번 :");
-	scanf("%d",&num); 
 	
-	printf("> 비밀번호 :");
-	scanf("%d",&pwd); 
- 
-	if(==) {//로그인 상태가 아닐때 ->> 로그인 아이디와 비밀번호 확인 
-		puts(" 로그인 되었습니다!");
+	else {//로그인 안된 경우 들어오는 코드 
+		 
+		puts("\n\r[ 로그인 ] \n\r");
+		printf("> 사번 :");
+		scanf("%d",&num); 
+		printf("> 비밀번호 :");
+		scanf("%d",&pwd); 
+	
+		if( e_num == num || e_pwd == pwd ) {
+			
 		//todo 로그인 플래그  
+			login_num = num;
+			puts("# 로그인 되었습니다!");
+		}
+		else{
+			puts(" 비밀번호가 틀렸습니다! ");
+		}
+	 
 	}
-	else{
-		puts(" 비밀번호가 틀렸습니다! ");
-	}
+	//로그인 체크 
+	
 
 }
 
