@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+//=================================================
+/*
+
 int main (void)
 {
 	char str1[20],str2[20];
@@ -39,4 +42,27 @@ void swap(char *str1,char *str2)
 		i++;
 	}
 	return;
+}
+*/
+//=================================================
+///*//
+
+void print_str(char **pps, int cnt);
+
+int main (void) {
+	char *ptr_ary[] = {"eagle", "tiger", "lion", "sqerrual"};
+	int count;
+	
+	count = sizeof(ptr_ary)/sizeof(ptr_ary[0]);
+	print_str(ptr_ary,count);
+	
+	
+	return 0;
+}
+
+void print_str(char **pps, int cnt) {
+	int i;
+	for(i=0;i<cnt;i++) {
+		printf("%s\n",pps[i]);
+	}
 }
