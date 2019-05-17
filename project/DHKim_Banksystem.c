@@ -12,14 +12,13 @@ int get_weekday(int year, int month);
 int get_weekday(int year, int month);
 int leap_check(int year);
 int app_Launcher(int mode);
-int print_accinfo(struct account *myacc);
-//
-int print_accinfo(struct account *myacc) {
+//int print_accinfo(struct account myacc);//
+
 
 int dispmenu(void);
 int loginout(void);
 int accprint(void);
-int addaccnt(void);
+int banktrns(void);
 int withdraw(void);
 int depositm(void);
 int checkdps(void);
@@ -29,17 +28,17 @@ int gamemode(void);
 
 
 
-struct manager {
-	char ID[MAXLEN];
-	char PW[MAXLEN];
-	int at_Level;
-};
-
 struct account {
 	char *Name;
+	
 	int deposit;
 	int trust;
+	
+	char ID[MAXLEN];
+	char PW[MAXLEN];
+	
 };
+struct account cur_user;
 
 int mdays[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 int loginflag = 0;
@@ -71,7 +70,7 @@ int app_Launcher(int mode) {
 		case 2:accprint();
 			break;
 		
-		case 3:addaccnt();
+		case 3:banktrns();
 			break;
 			
 		case 4:withdraw();
@@ -109,8 +108,8 @@ int dispmenu(void)
 	puts("\n===[ Welcome DHKim BANK!! ]===\n");
 	puts("===[ Select your menu ]=========");
 	puts(">> 1. Login / Logout");
-	puts(">> 2. All account print");
-	puts(">> 3. Add account");
+	puts(">> 2. account info print");
+	puts(">> 3. Bank Transfer");
 	puts(">> 4. withdraw money");
 	puts(">> 5. Deposit money");
 	puts(">> 6. Deposit Check");
@@ -171,21 +170,48 @@ int loginout (void) {
 int accprint (void) {
 	int i=0;
 	
-	for(i=0;i>10;i++) {//
+	for(i=0;i<10;i++) {//
+		puts("구조체포인터를 넘겨받아 계좌정보를 출력하는 함수 구현");
 			//print_accinfo(/*acc 구조체 주소*/);
+			
 	}
+	MID_DBL_LINE
+	puts("\nend of the Lisht") ;
+	MID_DBL_LINE
+	WAITKEY_RUTIN
 }
 
-int addaccnt (void) {
+int banktrns (void) {
+	if(loginflag) {
+		//당신의 잔액, 송금계좌, 금액 
+	}
+	else {
+		puts("Login First!");
+		WAITKEY_RUTIN
+	}
 
 }
 
 int withdraw (void) {
 	
+	if(loginflag) {
+	}
+	else {
+		puts("Login First!");
+		WAITKEY_RUTIN
+	}
+
 }
 
 int depositm (void) {
-	
+	if(loginflag) {
+		printf("ID : %s",cur_user.ID);//기능 추가구현 필요 
+		printf("deposit : %d",9999999);
+	}
+	else {
+		puts("Login First!");
+		WAITKEY_RUTIN
+	}
 }
 
 int checkdps (void) {
@@ -216,16 +242,19 @@ int gamemode (void) {
 	fflush(stdin);
 	getc(stdin);
 }
-//struct account 
-int print_accinfo(struct account *myacc) {
-	pritnf("User name : ")
-	puts(myacc->Name);
-	pritnf("User deposit : %d\n", myacc->deposit);
-	pritnf("User trust : %d\n", myacc->trust);
+
+
+int print_accinfo(struct account myacc) {
+	printf("User name : $s\n", myacc.Name);
+	printf("User deposit : %d\n", myacc.deposit);
+	printf("User trust : %d\n", myacc.trust);
+	printf("User Identiti : ", myacc.ID);
+	printf("User password : ", myacc.PW);
 	
 	return 0;
 	
 }
+
 
 //==================================================
 //re-used func
