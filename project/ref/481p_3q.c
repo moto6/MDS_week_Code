@@ -1,30 +1,32 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 void init_intro(char (*intro)[80], char **pint);
 int input_intro(char (*intro)[80]);
 void sort_intro(char **pint, int cnt);
-void printf_intro(int mode, void *vp, int cnt);
+void print_intro(int mode, void *vp, int cnt);
 
 
 int main(void)
 {
-	char intro[10][80]; //10x80
+	char intro[10][80];
 	char *pint[10];
 	int cnt;
-	
-	 
 	
 	init_intro(intro, pint);
 	cnt = input_intro(intro);
 	sort_intro(pint, cnt);
-	printf_intro(1, pint, cnt);//0은 최초 입력된 인사말, 1은 정렬된 인사말 
-	printf_intro(0, intro, cnt);
-
+	print_intro(1,pint,cnt);
+	print_intro(0,intro,cnt);	
+	
+	
+	
 	return 0;
+	
 }
+
 
 //init과 intro 연결 
 void init_intro(char (*intro)[80], char **pint) {
@@ -39,23 +41,7 @@ int input_intro ( char (*intro)[80] ) {
 	int l_cnt;
 	char buffer[80];
 	while( 1 ) {//end가 입력되면 종료 //인사말 저장 
-		/*
-		printf("인사말 입력 : ");
-		
-		  fgets( buffer, 79, stdin); //띄어쓰기 문장 입력하면 셧다운 
-		//gets( intro[i]);	//이함수 쓰는법 , 입력받아 서 저장
-		//strcpy( buffer, intro[i] );
-		printf("입력받은 문자열: %s",buffer);
-		strcpy(intro[l_cnt],buffer);
-		
-		printf("입력받은 문자열: %s",intro+l_cnt);
-		if( 0 == strcmp("end\n",buffer  )) {
-			break;
-		}
-		else {}
-		l_cnt++;
-		
-		*/
+	
 		printf("> 인사말 입력 : ");
 		gets(buffer);
 		if(strcmp(buffer, "end") == 0) break;
@@ -88,7 +74,7 @@ void sort_intro(char **pint, int cnt) {
 
 
  //0은 최초 입력된 인사말, 1은 정렬된 인사말
-void printf_intro(int mode, void *vp, int cnt) {
+void print_intro(int mode, void *vp, int cnt) {
 	int i; 
 	char **intp;
 	char (*intro)[80];
@@ -154,5 +140,3 @@ void printf_intro(int mode, void *vp, int cnt)
 
 //
 */
-
-

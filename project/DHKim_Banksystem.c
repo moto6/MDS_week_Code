@@ -1,8 +1,8 @@
 #define ENDMSG_RUTIN do{puts("Program terminated!!\n\n");}while(0);
 #define WAITKEY_RUTIN do{printf("\ncontinue to press any key");fflush(stdin);getc(stdin);}while(0);
 #define MID_DBL_LINE do{puts("=====================================================");}while(0);
-#define MAXLEN 100 //max len of buf
 #define WAIT_RUTIN do{puts("Looding..");sleep(1);puts("Looding......");sleep( 1 );}while(0);
+#define MAXLEN 100 //max len of buf
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +13,6 @@ void disp_calendar(int year, int month);
 int get_weekday(int year, int month);
 int get_weekday(int year, int month);
 int leap_check(int year);
-int app_Launcher(int mode);
 //int print_accinfo(struct account myacc);//
 
 
@@ -25,9 +24,15 @@ int withdraw(void);
 int depositm(void);
 int checkdps(void);
 int calprint(void);
-int levamesg(void);
+int levamesg(char **str);
 int gamemode(void);
 
+
+int printmsg (char **ps);
+
+int app_init(int cmd);
+int app_deinit(int state);
+int app_launch(int mode);
 
 
 struct account {
@@ -46,20 +51,33 @@ int mdays[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 int loginflag = 0;
 char ID_admin[] = "admin";
 char PW_admin[] = "admin";
-char *msgfreq[10] ;
 
 
 int main(void)
 {
 	
-	return app_Launcher(1);
+	app_init(1);
+	return app_deinit(app_launch(1));
 }
 
 
-int app_Launcher(int mode) {
+int app_init(int cmd) {
+		
+}
+int app_deinit(int state) {
+	
+}
+
+int app_launch(int mode) {
 	//mode 1 : nomal mode
 	//mode 2 : debug mode
 	int num=1;
+	
+	char *str[21];
+	
+	int acc_cnt;
+	
+	
 
 	while (num)
 	{
@@ -87,12 +105,14 @@ int app_Launcher(int mode) {
 		case 7:calprint();
 			break;
 		
-		case 8:levamesg();
+		case 8:levamesg(str);
 			break;
 		
 		case 9:gamemode();
 			break;
 			
+		case 81:printmsg(str);//문제점1 : 이함수가 끝나면 프로그램 종료되는 문제 
+		
 		default:
 			ENDMSG_RUTIN	
 			exit(1);
@@ -117,6 +137,7 @@ int dispmenu(void)
 	puts(">> 6. Deposit Check");
 	puts(">> 7. Calender");
 	puts(">> 8. Leave a Message");
+	puts("   >> 81. My Message List");
 	puts(">> 9. Program Vision");
 	puts(">> 0. Exit");
 	MID_DBL_LINE 
@@ -159,10 +180,10 @@ int loginout (void) {
 			scanf("%s",&buf);
 			if( 0 == strcmp(PW_admin,buf) ) {
 				MID_DBL_LINE 
-				puts("administor loginned!! WEEELLLCOME");
 				MID_DBL_LINE 
 				loginflag=1;	
 				WAIT_RUTIN
+				puts("administor loginned!! WEEELLLCOME");
 				WAITKEY_RUTIN
 			}
 		}
@@ -211,8 +232,7 @@ int banktrns (void) {
 
 }
 
-int withdraw (void) {
-	
+int withdraw (void) {	
 	if(loginflag) {
 	}
 	else {
@@ -252,8 +272,31 @@ int calprint (void) {
 	getc(stdin);
 }
 
-int levamesg (void) {
+int levamesg (char **str) {
 	
+	char temp[80];
+	int i=0
+	;
+	while( i< 20 ) {
+		printf("your Message :");
+		gets(temp);
+		if(strcmp(temp, "end") == 0 ) {
+			break;
+		}
+		else{}
+		str[i] = (char *) malloc(strlen(temp) + 1 );
+		strcpy( str[i] , temp );
+		i++;
+	}
+}
+
+int printmsg (char **ps) {
+	while(*ps  != NULL) {
+		printf("%s\n",*ps);
+		ps++;
+		puts("!!");
+	}
+	return 0;
 }
 
 int gamemode (void) {
