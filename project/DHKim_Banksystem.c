@@ -291,10 +291,16 @@ int levamesg (char **str) {
 }
 
 int printmsg (char **ps) {
+	
 	while(*ps  != NULL) {
-		printf("%s\n",*ps);
-		ps++;
-		puts("!!");
+	printf("%s\n",ps[0]);
+	printf("%s\n",ps[1]);
+	printf("%s\n",ps[2]);
+	printf("%s\n",ps[3]);
+	
+	//	printf("%s\n",*ps);
+	//	ps++;
+	//	puts("!!");
 	}
 	return 0;
 }
