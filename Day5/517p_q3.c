@@ -3,7 +3,7 @@
 
 int main(void) 
 {
-	i
+	//i
 	char buff[50];//입력단어 임시저장 버퍼 
 	char *pi [100];//저장 문자열 malloc 포인터
 	int i;
