@@ -1,5 +1,90 @@
-#include <iostream>
 
+
+
+
+
+
+
+
+/*
+//90p
+#include <iostream>
+using namespace std;
+int nData = 100;
+
+namespace TEST
+{
+	int nData = 200;
+
+}
+
+using namespace TEST
+
+int main(int argc, char * *argv)
+{
+	cout << nData << endl;
+	return 0;
+}
+*/
+
+
+
+
+
+/*
+//87p
+using namespace std;
+
+int nData = 200;
+namespace TEST
+{
+	int nData = 100;
+	void TestFunc(void)
+	{
+		cout << nData << endl;
+	}
+
+ }
+
+int main(void)
+{
+	TEST::TestFunc();
+	return 0;
+}
+*/
+
+
+
+
+
+
+/*
+//
+namespace TEST
+{
+	int g_nData = 100;
+	void TestFunc(void)
+	{
+		std::cout << "TEST::TestFunc()" << std::endl;
+
+	}
+}
+
+int main(void)
+{
+	TEST::TestFunc();
+	std::cout << TEST::g_nData << std::endl;
+
+	return 0;
+
+}
+*/
+
+
+
+/*
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//69p 에러발생
 template <typename T>
 
 T TestFunc(t a)
@@ -17,6 +102,8 @@ int main(int argc, char **argv)
 	std::cout << "char* \t" << TestFunc("TestString") << std::endl;
 	return 0;
 }
+*/
+
 
 
 /*
