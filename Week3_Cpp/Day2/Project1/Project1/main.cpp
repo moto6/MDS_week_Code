@@ -1,64 +1,12 @@
 #include <iostream>
 #include <cstdio>
+
 ///*
-//108p
+//1332p
 using namespace std;
 
-class CTest
-{
-public:
-	CTest()
-	{
-		m_nData = 10;
-	}
-
-	int m_nData;
-	void PrintData(void)
-	{
-		cout << m_nData << endl;
-
-	}
-};
-
-int main(int argc, char * *argv)
-{
-	CTest t;
-	t.PrintData();
-	return 0;
-}
-
-//*/
-
-
-
-
-
-/*
-//106p
-class USERDATA
-{
-public:
-	int nAge;
-	char szName[32];
-
-	void Printf(void)
-	{
-		printf("%d %s\n", nAge, szName);
-	}
-};
-
-int main(void)
-{
-	USERDATA user = { 10,"Ã¶¼ö" };
-	user.Printf();
-
-	return 0;
-}
-*/
-
-
-
-
+class 
+	// */
 
 
 
@@ -121,22 +69,22 @@ using namespace std;
 class CMyData
 {
 public:
-	CMyData(int nParam) : m_nData(nParam) {};
-	CMyData(int x, int y) : m_nData(x + y) {};
-	int GetData(void) { return m_nData; }
+CMyData(int nParam) : m_nData(nParam) {};
+CMyData(int x, int y) : m_nData(x + y) {};
+int GetData(void) { return m_nData; }
 
 private:
-	int m_nData;
+int m_nData;
 };
 int main(void)
 {
-	CMyData a(10);
-	CMyData b(3, 4);
+CMyData a(10);
+CMyData b(3, 4);
 
-	cout << a.GetData() << endl;
-	cout << b.GetData() << endl;
+cout << a.GetData() << endl;
+cout << b.GetData() << endl;
 
-	return 0;
+return 0;
 }
 */
 
@@ -149,23 +97,23 @@ using namespace std;
 class CRefTest
 {
 public :
-	CRefTest(int &rParam) : m_nData(rParam) {};
-	int GetData(void) { return m_nData; }
+CRefTest(int &rParam) : m_nData(rParam) {};
+int GetData(void) { return m_nData; }
 
 private:
-	int &m_nData;
+int &m_nData;
 };
 int main(int num, char* *string)
 {
-	int a = 10;
-	CRefTest t(a);
-	cout << t.GetData() << endl;
+int a = 10;
+CRefTest t(a);
+cout << t.GetData() << endl;
 
-	a = 20;
-	cout << t.GetData() << endl;
+a = 20;
+cout << t.GetData() << endl;
 
 
-	return 0;
+return 0;
 }
 */
 
@@ -180,34 +128,117 @@ using namespace std;
 
 class CTest
 {
-	int m_nData;
-	
-public:
-	CTest()
-	{
-		cout << "CTest::Ctest()" << endl;
-	}
-	~CTest()
-	{
-		cout << "~CTest::Ctest()" << endl;
+int m_nData;
 
-	}
+public:
+CTest()
+{
+cout << "CTest::Ctest()" << endl;
+}
+~CTest()
+{
+cout << "~CTest::Ctest()" << endl;
+
+}
 };
 
 int main(int argc, char * *argv)
 {
-	cout << "Begin" << endl;
-	CTest *pData = new CTest;
-	cout << "Test" << endl;
+cout << "Begin" << endl;
+CTest *pData = new CTest;
+cout << "Test" << endl;
 
-	delete pData;
-	cout << "End" << endl;
+delete pData;
+cout << "End" << endl;
 
+return 0;
+}
+*/
+
+
+/*
+//109p
+using namespace std;
+
+class CTest
+{
+public:
+	CTest()
+	{
+		cout << "CTest() : construct func " << endl;
+		m_nData = 10;
+
+	}
+	int m_nData;
+
+	void PrintData(void)
+	{
+		cout << m_nData << endl;
+
+	}
+};
+//user code
+int main(void)
+{
+	cout << "main() func start" << endl;
+	CTest t;
+	t.PrintData();
+}
+*/
+
+
+
+/*
+//108p
+using namespace std;
+
+class CTest
+{
+public:
+	CTest()
+	{
+		m_nData = 10;
+	}
+
+	int m_nData;
+	void PrintData(void)
+	{
+		cout << m_nData << endl;
+
+	}
+};
+int main(int argc, char * *argv)
+{
+	CTest t;
+	t.PrintData();
 	return 0;
 }
 */
 
 
+
+/*
+//106p
+class USERDATA
+{
+public:
+	int nAge;
+	char szName[32];
+
+	void Printf(void)
+	{
+		printf("%d %s\n", nAge, szName);
+	}
+};
+
+int main(void)
+{
+	USERDATA user = { 10,"Ã¶¼ö" };
+	user.Printf();
+
+	return 0;
+}
+*/
 
 
 /*
