@@ -1,5 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class CMyData
+{
+public:
+	CMyData() { cout << "CMymData"}
+}
 
 
+
+
+
+/*
+//164p
+using namespace std;
+void TestFunc(const int &nParam)
+{
+	int &nNewParam = const_cast<int &>(nParam)
+
+}
+
+*/
 
 
 
@@ -7,8 +28,39 @@
 
 
 /*
+//163p
+using namespace std;
+class CTest
+{
+public :
+	CTest(int nParam) : m_nData(nParam);
+	cTest(){}
+
+	int GetData() const
+	{
+		m_nData = 20;
+		return m_nData;
+		int Setdata(int nParam) { m_nData = nParam; }
+
+	private:
+		mutable int m_nData = 0;
+	}
+}
+
+int main(int argc, char ** argv)
+{
+	CTest a(10);
+	cout << a.GetData << endl;
+
+	return 0;
+}
+*/
+
+
+
+
+/*
 //90p
-#include <iostream>
 using namespace std;
 int nData = 100;
 
