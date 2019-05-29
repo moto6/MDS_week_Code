@@ -1,6 +1,262 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
+class Employee {
+private:
+	char name[100];
+public:
+	Employee(char * name)
+	{
+		strcpy(this->name, name);
+	}
+	
+	void ShowYourName() const
+	{
+		cout << "name : " << name << endl;
+
+	}
+
+	virtual int GetPay() const
+	{
+		return 0;
+	}
+
+	virtual void ShowSalaryInfo() const
+	{
+	}
+};
+
+class PermanetWorker : public Employee
+{
+private:
+	int salary;
+public:
+	PermanetWorker(char * name, int money)
+		: Employee(name), salary(money)
+	{}
+
+	virtual int GetPay() const
+	{
+		return salary;
+	}
+	virtual void ShowSalaryInfo() const
+	{
+		ShowYourName();
+		cout << "salay : " << GetPay() << endl << endl;
+
+	}
+};
+
+class EmployeeHandler
+{
+private:
+	Employee* empList[50];
+	int empNum;
+public:
+	EmployeeHandler() : empNum(0)
+	{ }
+	void AddEmployee(Employee* emp)
+	{
+		empList[empNum++] = emp;
+	}
+
+	void ShowAllSalaryInfo()const
+	{
+		for (int i = 0; i < empNum; i++)
+			//sum += empList[i]->GetPay();
+			empList[i]->ShowSalaryInfo();
+			//		
+		//cout << "Salary SUM :" << sum << endl;
+	}
+	
+	void ShowTotalSalary()const
+	{
+		int sum = 0;
+		///////////////
+		for (int i = 0; i < empNum; i++)
+		sum += empList[i]->GetPay();
+		//////////////
+		cout << "Salary SUM :" << sum << endl;
+	}
+
+
+	~EmployeeHandler()
+	{
+	for (int i = 0; i < empNum; i++)
+	delete empList[i];
+	}
+
+	};
+
+	int main(void)
+	{
+	EmployeeHandler handler;
+
+
+	handler.AddEmployee(new PermanetWorker("KIM", 1000));
+	handler.AddEmployee(new PermanetWorker("LEE", 1500));
+	handler.AddEmployee(new PermanetWorker("JUN", 1700));
+
+	handler.ShowAllSalaryInfo();
+	handler.ShowTotalSalary();
+	}
+
+
+
+
+
+/*
+//347p
+using namespace std;
+class First
+{
+public:
+	virtual void MyFunc() { cout << "First Func" << endl; }
+};
+
+class Second : public First
+{
+public:
+	virtual void MyFunc() { cout << "Second Func" << endl; }
+};
+
+class Third : public Second
+{
+public:
+	virtual void MyFunc() { cout << "third Func" << endl; }
+};
+
+int main(void)
+{
+	Third * tptr = new Third();
+	Second * sptr = tptr;
+	First * fptr = sptr;
+
+	fptr->MyFunc();
+	sptr->MyFunc();
+	tptr->MyFunc();
+	
+	delete tptr;
+	return 0;
+
+}
+*/
+
+/*
+//test
+using namespace std;
+int main(int argc, char* *argv)
+{
+	cout << "helloworld!" << endl;
+
+	return 0;
+}
+
+*/
+
+
+
+
+/*
+//331p
+class Employee {
+private:
+	char name[100];
+public:
+	Employee(char * name)
+	{
+		strcpy(this->name, name);
+	}
+	void ShowYourName() const
+	{
+		cout << "name : " << name << endl;
+
+	}
+};
+
+class PermanetWorker : public Employee
+{
+private :
+	int salary;
+public :
+	PermanetWorker(char * name, int money)
+		: Employee(name), salary(money)
+	{}
+
+	int GetPay() const
+	{
+		return salary;
+	}
+	void ShowSalaryInfo() const
+	{
+		ShowYourName();
+		cout << "salay : " << GetPay() << endl << endl;
+
+	}
+};
+
+class EmployeeHandler
+{
+private:
+	Employee* empList[50];
+	int empNum;
+public:
+	EmployeeHandler() : empNum(0)
+	{}
+	void AddEmployee(Employee* emp)
+	{
+		empList[empNum++] = emp;
+	}
+
+	void ShowAllSalaryInfo()const
+	{
+//		
+		//for (int i = 0; i < empNum; i++)
+		//sum += empList[i]->GetPay();
+//		
+		//cout << "Salary SUM :" << sum << endl;
+	}
+	/*
+	void ShowTotalSalary()const
+	{
+		int sum = 0;
+	//	
+		//for (int i = 0; i < empNum; i++)
+		//sum += empList[i]->GetPay();
+		//////////////
+		cout << "Salary SUM :" << sum << endl;
+
+	}
+	
+
+	~EmployeeHandler()
+	{
+		for (int i = 0; i < empNum; i++)
+			delete empList[i];
+	}
+
+};
+
+int main(void)
+{
+	EmployeeHandler handler;
+
+	
+	handler.AddEmployee(new PermanetWorker("KIM", 1000));
+	handler.AddEmployee(new PermanetWorker("LEE", 1000));
+	handler.AddEmployee(new PermanetWorker("JUN", 1000));
+
+	handler.ShowAllSalaryInfo();
+	handler.ShowTotalSalary();
+}
+*/
+
+
+
+
+/*
+//
 class FruitSeller
 {
 private:
@@ -74,7 +330,7 @@ int main(void)
 	buyer.ShowBuyResult();
 
 }
-
+*/
 
 
 

@@ -1,3 +1,5 @@
 ﻿  Day3_essen.cpp
-  Yun.vcxproj -> C:\Users\DHKim\Desktop\Workspace\1week_C_Code\Week3_Cpp\Day3\Yun\Debug\Yun.exe
-  Yun.vcxproj -> C:\Users\DHKim\Desktop\Workspace\1week_C_Code\Week3_Cpp\Day3\Yun\Debug\Yun.pdb (Full PDB)
+c:\workspace\mds_week_code\week3_cpp\day3\yun\yun\day3_essen.cpp(11): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+  Yun.vcxproj -> C:\workspace\MDS_week_Code\Week3_Cpp\Day3\Yun\Debug\Yun.exe
+  Yun.vcxproj -> C:\workspace\MDS_week_Code\Week3_Cpp\Day3\Yun\Debug\Yun.pdb (Full PDB)
