@@ -2,6 +2,45 @@
 #include <cstring>
 using namespace std;
 
+class Employee
+{
+private:
+	char name[100];
+public:
+	Employee(char * name)
+	{
+		strcpy(this->name, name);
+	}
+
+	void ShowYourName() const
+	{
+		cout << "name: " << name << endl;
+	}
+	virtual int GetPay() const = 0;
+	virtual void ShowSalaryInfo() const = 0;
+
+};
+
+class PermanentWorker : public Employee
+{};
+class TemporaryWorker : public Employee
+{};
+class SalesWorker : public PermanentWorker 
+{};
+
+namespace RISK_LEVEL
+{
+	enum { RISK_A = 30, RISK_B = 20, RISK_C = 10; }
+}
+
+
+class ForeginSalesWorker : public SalesWorker
+{
+private:
+	const int risklevel;
+public:
+	ForeginSalesWorker(char * name)
+};
 
 
 
