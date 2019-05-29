@@ -2,6 +2,59 @@
 #include <cstring>
 using namespace std;
 
+
+
+
+
+/*
+//test
+class SoSimple
+{
+private:
+	int num;
+public:
+	SoSimple(int n) : num(n)
+	{
+		cout << "num=" << num << ",";
+		cout << "address=" << this << endl;
+	}
+
+	void ShowSimpleData()
+	{
+		cout << num << endl;
+	}
+	SoSimple * GetThisPointer()
+	{
+		return this;
+	}
+};
+int main(void)
+{
+	SoSimple sim1(100); //sim1 객체 생성(Sosimple클래스), 100으로 초기화
+	SoSimple *ptr1 = sim1.GetThisPointer();
+	cout << ptr1 << ",";
+	ptr1->ShowSimpleData();
+	//sim1객체의 주소 확인
+	cout << &sim1 << endl;
+	//이랬으면 어떨까 싶습니다!!
+
+
+	SoSimple sim2(200);
+	SoSimple *ptr2 = sim2.GetThisPointer();
+	cout << ptr2 << ",";
+	ptr2->ShowSimpleData();
+	//sim2 객체의 주소 확인
+	cout << &sim1 << endl;
+	//
+	return 0;
+
+}
+*/
+
+
+
+/*
+//350p
 class Employee {
 private:
 	char name[100];
@@ -101,7 +154,7 @@ public:
 	handler.ShowAllSalaryInfo();
 	handler.ShowTotalSalary();
 	}
-
+	*/
 
 
 
