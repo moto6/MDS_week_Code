@@ -1,3 +1,6 @@
-﻿  Day3_essen.cpp
-  Yun.vcxproj -> C:\Users\DHKim\Desktop\Workspace\1week_C_Code\Week3_Cpp\Day3\Yun\Debug\Yun.exe
-  Yun.vcxproj -> C:\Users\DHKim\Desktop\Workspace\1week_C_Code\Week3_Cpp\Day3\Yun\Debug\Yun.pdb (Full PDB)
+﻿cl : 명령줄 warning D9028: 최소 다시 빌드에 실패했습니다. 정상 빌드로 되돌립니다.
+  salary.cpp
+c:\workspace\mds_week_code\week3_cpp\day4\372p_salary\yun\salary.cpp(13): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+  Yun.vcxproj -> C:\workspace\MDS_week_Code\Week3_Cpp\Day4\372p_salary\Debug\Yun.exe
+  Yun.vcxproj -> C:\workspace\MDS_week_Code\Week3_Cpp\Day4\372p_salary\Debug\Yun.pdb (Full PDB)
