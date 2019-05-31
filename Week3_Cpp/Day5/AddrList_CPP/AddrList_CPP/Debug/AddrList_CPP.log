@@ -1,0 +1,24 @@
+﻿  AddressBook_Main.cpp
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.h(10): error C2065: 'strName': 선언되지 않은 식별자입니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.h(11): error C2065: 'strPhone': 선언되지 않은 식별자입니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  MyList.cpp
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.h(10): error C2065: 'strName': 선언되지 않은 식별자입니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.h(11): error C2065: 'strPhone': 선언되지 않은 식별자입니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  UserData.cpp
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.h(10): error C2065: 'strName': 선언되지 않은 식별자입니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.h(11): error C2065: 'strPhone': 선언되지 않은 식별자입니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.cpp(13): error C2614: 'CUserData': 멤버 초기화가 잘못되었습니다. 'strName'이(가) 기본 또는 멤버가 아닙니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.cpp(13): error C2614: 'CUserData': 멤버 초기화가 잘못되었습니다. 'strPhone'이(가) 기본 또는 멤버가 아닙니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.cpp(25): error C2065: 'strName': 선언되지 않은 식별자입니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.cpp(33): error C2065: 'strName': 선언되지 않은 식별자입니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.cpp(34): error C2065: 'strPhone': 선언되지 않은 식별자입니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  UserInterface.cpp
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.h(10): error C2065: 'strName': 선언되지 않은 식별자입니다.
+c:\workspace\mds_week_code\week3_cpp\day5\addrlist_cpp\addrlist_cpp\userdata.h(11): error C2065: 'strPhone': 선언되지 않은 식별자입니다.
+  코드를 생성하고 있습니다...
