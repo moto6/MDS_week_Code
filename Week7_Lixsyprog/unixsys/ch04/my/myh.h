@@ -5,3 +5,4 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/errno.h>
+#include <sys/utsname.h>
