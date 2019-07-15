@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/Data/timer/timerTest_mod.ko := arm-none-linux-gnueabi-ld -EL -r  -T /root/kernel-mds2450-3.0.22/scripts/module-common.lds --build-id  -o /mnt/hgfs/Data/timer/timerTest_mod.ko /mnt/hgfs/Data/timer/timerTest_mod.o /mnt/hgfs/Data/timer/timerTest_mod.mod.o

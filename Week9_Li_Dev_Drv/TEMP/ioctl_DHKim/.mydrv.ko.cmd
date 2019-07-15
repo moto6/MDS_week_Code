@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/Data/ioctl_dir/mydrv.ko := arm-none-linux-gnueabi-ld -EL -r  -T /root/kernel-mds2450-3.0.22/scripts/module-common.lds --build-id  -o /mnt/hgfs/Data/ioctl_dir/mydrv.ko /mnt/hgfs/Data/ioctl_dir/mydrv.o /mnt/hgfs/Data/ioctl_dir/mydrv.mod.o

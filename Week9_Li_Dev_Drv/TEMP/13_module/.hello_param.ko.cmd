@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/Data/13_module/hello_param.ko := arm-none-linux-gnueabi-ld -EL -r  -T /root/kernel-mds2450-3.0.22/scripts/module-common.lds --build-id  -o /mnt/hgfs/Data/13_module/hello_param.ko /mnt/hgfs/Data/13_module/hello_param.o /mnt/hgfs/Data/13_module/hello_param.mod.o
